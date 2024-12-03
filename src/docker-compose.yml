@@ -1,0 +1,16 @@
+services:
+  myserver:
+    container_name: myserver
+    hostname: myserver
+    build:
+      context: .
+      dockerfile: dockerfile-myserver
+
+  proxy:
+    container_name: proxy
+    hostname: proxy
+    build:
+      context: .
+      dockerfile: dockerfile-proxy
+    ports:
+      - "80:8080"
